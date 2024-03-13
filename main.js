@@ -18,7 +18,16 @@ function checkSectionNumber() {
         sectionNumber = 4;
     }
     
-    console.log(sectionNumber);
+    // console.log(sectionNumber);
+
+
+    if(sectionNumber == 2){
+        let pointPercentage2 = ((scrollY - (sectionHeight2 - ( 1.01 * window.innerHeight))) / ( window.innerHeight) ) * 100;
+        let reversePointPercentage2 = 50- (pointPercentage2 /2 );
+        document.querySelector('.image1').style.clipPath = `inset(0% ${reversePointPercentage2}% 0% ${reversePointPercentage2}%)`;
+        console.log(reversePointPercentage2);
+
+    }
 
 
     if (sectionNumber == 3){

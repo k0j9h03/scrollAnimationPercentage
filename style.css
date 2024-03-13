@@ -45,6 +45,7 @@
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
+    clip-path: inset(0 50% 0 50%);
 }
 
 .image2{
