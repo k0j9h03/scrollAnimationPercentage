@@ -1,8 +1,10 @@
 let sectionNumber = 0;
 
+
 /** 스크롤 섹션넘버 체크하는 함수 */
 function checkSectionNumber() {
     const scrollY = window.scrollY;
+    let full = false;
     let sectionHeight1 = document.querySelector('.section1').offsetHeight;
     let sectionHeight2 = document.querySelector('.section2').offsetHeight + sectionHeight1;
     let sectionHeight3 = document.querySelector('.section3').offsetHeight + sectionHeight2;
@@ -21,16 +23,17 @@ function checkSectionNumber() {
     // console.log(sectionNumber);
 
 
-    if(sectionNumber == 2){
-        let pointPercentage2 = ((scrollY - (sectionHeight2 - ( 1.01 * window.innerHeight))) / ( window.innerHeight) ) * 100;
-        let reversePointPercentage2 = 50- (pointPercentage2 /2 );
+    if(sectionNumber == 2 || sectionNumber==3){
+        let pointPercentage2 = ((scrollY - (sectionHeight2 - ( 1 * window.innerHeight)))  / ( window.innerHeight) ) * 100;
+        let reversePointPercentage2 = 50 - (pointPercentage2 /2 );
         document.querySelector('.image1').style.clipPath = `inset(0% ${reversePointPercentage2}% 0% ${reversePointPercentage2}%)`;
         console.log(reversePointPercentage2);
+
 
     }
 
 
-    if (sectionNumber == 3){
+    if (sectionNumber == 3 ){
         let pointPercentage = ((scrollY - sectionHeight2) / ((sectionHeight3 - sectionHeight2) - window.innerHeight)) * 100;
         let reversePointPercentage = 100-pointPercentage;
         document.querySelector('.image2').style.clipPath = `inset(${reversePointPercentage}% 0% 0% 0%)`;
